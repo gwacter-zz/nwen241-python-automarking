@@ -29,6 +29,12 @@ def walk_submissions():
 
     run_test()
 
+# TODO
+#
+# - will have separate program to copy results (safer this way)
+# - test script is assumed to be in the current directory
+# - copy original results to user marking directory
+# - create a summary of the results (calculate the score too)
 
 if __name__ == "__main__":
     walk_submissions()
