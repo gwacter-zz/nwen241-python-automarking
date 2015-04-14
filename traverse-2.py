@@ -19,7 +19,7 @@ def run_test(studentdir, testdir):
 
     # construct line for execution of tests
     exec_list = ["python3", "-m", "doctest", "-v", \
-       testdir+os.sep+"test-script.txt"]
+       testdir+os.sep+"test-script-2.txt"]
 
     # execute the tests themselves and capture the results
     p = Popen(exec_list, stdout=PIPE)
@@ -63,7 +63,7 @@ def write_marksheet(student_id, student_name, test_results):
     print("WRITING "+student_id+" "+student_name)
     fout = open("marking"+os.sep+"marksheet","w")
     fout.write('='*40+'\n')
-    fout.write('ASSIGNMENT 1: NWEN241 : 2015\n')
+    fout.write('ASSIGNMENT 2 : NWEN241 : 2015\n')
     fout.write("\n")
     fout.write("Student ID:" + student_id + '\n')
     fout.write("Student Name:" + student_name + '\n')
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     from collections import OrderedDict
 
     # Set the directory where the student submissions are found
-    submitdir = '/home/ian/submit'
+    submitdir = '/vol/submit/nwen241_2015T1/Assignment_2'
     # Assume the tests are found in the current directory
     testdir = os.getcwd()
     mark_students(submitdir, testdir)
