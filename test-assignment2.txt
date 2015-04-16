@@ -1,0 +1,195 @@
+This is a doctest for add_vectors
+
+TEST: Add Vectors MAX: 20 MULTIPLIER: 1
+>>> from assignment2 import add_vectors
+
+>>> add_vectors(None, [1,2,3])
+Error: first argument is not a list
+>>> add_vectors([1,2,3],None)
+Error: second argument is not a list
+>>> add_vectors("fdfdsfd","fdfdsfds")
+Error: first argument is not a list
+Error: second argument is not a list
+>>> add_vectors(None,None)
+Error: first argument is not a list
+Error: second argument is not a list
+>>> add_vectors([0,2,3,4],[3])
+Error: lengths of the two vectors are different
+>>> add_vectors([3],[0,3,12,43,8])
+Error: lengths of the two vectors are different
+>>> add_vectors(["a",2],[2,4])
+Error: attempted to add incompatible a to 2
+>>> add_vectors([4,2],["b",4])
+Error: attempted to add incompatible 4 to b
+>>> add_vectors(["f",2],["b",4])
+Error: attempted to add incompatible f to b
+>>> add_vectors([3,"f"],["b",4])
+Error: attempted to add incompatible 3 to b
+>>> add_vectors([3,4],[5,"b"])
+Error: attempted to add incompatible 4 to b
+>>> add_vectors([3,4],[5,7])
+[8, 11]
+>>> add_vectors([2.0],[2])
+Error: attempted to add incompatible 2.0 to 2
+>>> add_vectors([1,2,3,4,5,6,7,8,9],[1,1,1,1,1,1,1,1,1])
+[2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> type(add_vectors([23,4],[4,3]))
+<class 'list'>
+>>> add_vectors([2],[4])
+[6]
+>>> add_vectors([1,2,3,4,5],[5,4,3,2,1])
+[6, 6, 6, 6, 6]
+>>> add_vectors("b",[3])
+Error: first argument is not a list
+>>> add_vectors("fdfdsfds",[4])
+Error: first argument is not a list
+>>> add_vectors([5],"fdsfdsfds")
+Error: second argument is not a list
+
+
+
+
+
+
+This is a doctest for print_frequency
+
+TEST: Print Frequency MAX: 12 MULTIPLIER: 1
+>>> from assignment2 import print_frequency
+
+>>> print_frequency("ThiS is String with Upper and lower case Letters")
+a  2
+c  1
+d  1
+e  5
+g  1
+h  2
+i  4
+l  2
+n  2
+o  1
+p  2
+r  4
+s  5
+t  5
+u  1
+w  2
+
+>>> print_frequency(None)
+Error: only accepts strings
+>>> print_frequency(int)
+Error: only accepts strings
+>>> print_frequency(float)
+Error: only accepts strings
+>>> print_frequency("")
+>>> print_frequency(" ")
+>>> print_frequency("AAAAA")
+a  5
+>>> print_frequency("AbABAbABA")
+a  5
+b  4
+>>> print_frequency("AbAZBAZbZABA!")
+a  5
+b  4
+z  3
+>>> print_frequency("AbAZBA*****98328504ZbZABA!")
+a  5
+b  4
+z  3
+>>> print_frequency("abbcccddddeeeefffffggggggg")
+a  1
+b  2
+c  3
+d  4
+e  4
+f  5
+g  7
+>>> print_frequency("abcdefghijklmnopqrstuvwxyz")
+a  1
+b  1
+c  1
+d  1
+e  1
+f  1
+g  1
+h  1
+i  1
+j  1
+k  1
+l  1
+m  1
+n  1
+o  1
+p  1
+q  1
+r  1
+s  1
+t  1
+u  1
+v  1
+w  1
+x  1
+y  1
+z  1
+
+TEST: Verbing MAX: 11 MULTIPLIER: 1
+>>> from assignment2 import verbing
+
+>>> verbing(None)
+Error: only accepts strings
+>>> verbing(1.0)
+Error: only accepts strings
+>>> verbing("")
+''
+>>> verbing("a b c")
+'aly bly cly'
+>>> verbing("a bb c")
+'aly bbly cly'
+>>> verbing("aaa bbb c")
+'aaaing bbbing cly'
+>>> verbing("fdsfds 432432 fdsfdsf")
+'fdsfdsing 432432ing fdsfdsfing'
+>>> type(verbing("dsa fd sd fds"))
+<class 'str'>
+>>> verbing("a")
+'aly'
+>>> verbing("ab")
+'ably'
+>>> verbing("abc")
+'abcing'
+
+TEST: Verbing File MAX: 5 MULTIPLIER: 1
+>>> from assignment2 import verbing_file
+
+>>> verbing_file(None)
+Error: only accepts strings
+>>> verbing_file(432432432)
+Error: only accepts strings
+>>> print(verbing_file("monty-python.txt"))
+Adrianing Wapcaplet:ing Aah,ing comeing in,ing comeing in,ing Mr....Simpson.ing Aaah,ing welcomeing toly
+Mousebat,ing Follicle,ing Goosecreature,ing Ampersand,ing Spong,ing Wapcaplet,ing Looseliver,ing
+Vendettaing anding Prang!ing
+Mr.ing Simpson:ing Thanking you.ing
+Wapcaplet:ing Doly siting down--mying name'sing Wapcaplet,ing Adrianing Wapcaplet...ing
+Mr.ing Simpson:ing how'd'y'do.ing
+Wapcaplet:ing Now,ing Mr.ing Simpson...ing Simpson,ing Simpson...ing French,ing isly it?ing
+S:ly No.ing
+W:ly Aah.ing Now,ing Ily understanding youing wanting usly toly advertiseing youring washinging powder.ing
+S:ly String.ing
+W:ly String,ing washinging powder,ing what'sing theing difference.ing Wely caning selling *anything*.ing
+S:ly Good.ing Welling Ily haveing thising largeing quantitying ofly string,ing aly hundreding anding twenty-twoing
+thousanding *miles*ing ofly itly toly bely exact,ing whiching Ily inherited,ing anding Ily thoughting ifly Ily
+advertiseding it...ing
+W:ly Ofly course!ing Aly nationaling campaign.ing Usefuling stuff,ing string,ing noly troubleing there.ing
+S:ly Ah,ing buting there'sing aly snag,ing youing see.ing Dueing toly bading planning,ing theing hundreding anding
+twenty-twoing thousanding milesing isly inly threeing inching lengths.ing Soly it'sing noting verying
+useful.ing
+W:ly Well,ing that'sing ouring sellinging point!ing
+"SIMPSON'Sing INDIVIDUALing STRINGETTES!"ing
+<BLANKLINE>
+
+>>> verbing_file("monty-python.txt")
+'Adrianing Wapcaplet:ing Aah,ing comeing in,ing comeing in,ing Mr....Simpson.ing Aaah,ing welcomeing toly\nMousebat,ing Follicle,ing Goosecreature,ing Ampersand,ing Spong,ing Wapcaplet,ing Looseliver,ing\nVendettaing anding Prang!ing\nMr.ing Simpson:ing Thanking you.ing\nWapcaplet:ing Doly siting down--mying name\'sing Wapcaplet,ing Adrianing Wapcaplet...ing\nMr.ing Simpson:ing how\'d\'y\'do.ing\nWapcaplet:ing Now,ing Mr.ing Simpson...ing Simpson,ing Simpson...ing French,ing isly it?ing\nS:ly No.ing\nW:ly Aah.ing Now,ing Ily understanding youing wanting usly toly advertiseing youring washinging powder.ing\nS:ly String.ing\nW:ly String,ing washinging powder,ing what\'sing theing difference.ing Wely caning selling *anything*.ing\nS:ly Good.ing Welling Ily haveing thising largeing quantitying ofly string,ing aly hundreding anding twenty-twoing\nthousanding *miles*ing ofly itly toly bely exact,ing whiching Ily inherited,ing anding Ily thoughting ifly Ily\nadvertiseding it...ing\nW:ly Ofly course!ing Aly nationaling campaign.ing Usefuling stuff,ing string,ing noly troubleing there.ing\nS:ly Ah,ing buting there\'sing aly snag,ing youing see.ing Dueing toly bading planning,ing theing hundreding anding\ntwenty-twoing thousanding milesing isly inly threeing inching lengths.ing Soly it\'sing noting verying\nuseful.ing\nW:ly Well,ing that\'sing ouring sellinging point!ing\n"SIMPSON\'Sing INDIVIDUALing STRINGETTES!"ing\n'
+
+>>> verbing_file("monty-python-1.txt")
+'\n\nLoreming ipsuming doloring siting amet,ing consecteturing adipiscinging elit.ing Donecing idly suscipiting augue.ing Pellentesqueing egeting risusing tortor.ing Phasellusing inly auctoring mi.ing Donecing ullamcorpering odioing neque,ing necing pharetraing erating portaing placerat.ing Loreming ipsuming doloring siting amet,ing consecteturing adipiscinging elit.ing Vivamusing vitaeing lacusing est.ing Suspendisseing noning lacusing tempor,ing faucibusing nuncing a,ly vestibuluming ante.ing Maecenasing dictuming odioing noning sapiening dapibus,ing idly ullamcorpering veliting porttitor.ing Morbiing suscipiting orciing consequating felising porttitor,ing veling suscipiting erosing sollicitudin.ing Maecenasing dapibusing cursusing consectetur.ing Utly vehiculaing dictuming erating siting ameting vehicula.ing Donecing quaming augue,ing porttitoring acly vulputateing quis,ing sempering tincidunting metus.ing Nuncing veliting enim,ing laciniaing inly ipsuming vitae,ing ultriciesing mattising urna.ing\n\nNuncing inly venenatising mi.ing Donecing egestasing imperdieting exly utly euismod.ing Naming molestieing vulputateing lorem,ing veling molestieing lacusing efficituring vel.ing Vivamusing ullamcorpering orciing odio,ing siting ameting elementuming felising faucibusing non.ing Nuncing sollicitudining nequeing tellus,ing necing fringillaing eniming temporing ac.ing Nuncing noning sodalesing mauris.ing Integering vitaeing nisling tortor.ing Utly egeting variusing ante,ing pellentesqueing blanditing magna.ing Inly doloring nisi,ing convallising siting ameting mily ut,ing faucibusing molestieing ante.ing Nullaing vitaeing nuncing viverra,ing porttitoring erosing vel,ing ultricesing justo.ing Seding etly tempusing tortor,ing necing efficituring risus.ing Maecenasing quising felising vitaeing quaming pharetraing sollicitudining siting ameting quising sapien.ing Nuncing loreming nisi,ing rutruming acly seming at,ing congueing elementuming urna.ing Nullaing vitaeing orciing vitaeing leoing fringillaing mollis.ing Nullaing atly fermentuming metus.ing Loreming ipsuming doloring siting amet,ing consecteturing adipiscinging elit.ing\n\nDonecing ornareing magnaing noning consecteturing ornare.ing Fusceing scelerisqueing vestibuluming nisiing utly elementum.ing Praesenting iaculising laoreeting erat.ing Curabituring molestieing orciing justo,ing noning rutruming maurising accumsaning quis.ing Maecenasing auctoring ultricesing auctor.ing Naming risusing nulla,ing posuereing necing convallising quis,ing egestasing necing nisi.ing Nullaing idly scelerisqueing tellus,ing idly rhoncusing ex.ing Donecing acly mattising ante,ing seding lobortising metus.ing Praesenting inly eniming dignissim,ing scelerisqueing loreming siting amet,ing vestibuluming augue.ing Nullaing variusing sollicitudining liberoing noning sollicitudin.ing Seding mollising blanditing metusing euly sagittis.ing Maecenasing bibendum,ing tortoring idly tempusing ultrices,ing anteing felising rhoncusing quam,ing egeting feugiating eniming leoing veling lectus.ing Utly atly efficituring sem.ing Vestibuluming convallising condimentuming ex,ing euly elementuming nisiing ullamcorpering at.ing\n\nPhasellusing siting ameting orciing noning metusing commodoing tristiqueing noning euly sem.ing Utly blandit,ing sapiening aly luctusing imperdiet,ing massaing anteing placerating eros,ing quising blanditing ligulaing esting utly nisl.ing Crasing idly tincidunting risus.ing Nullaming commodoing bibenduming laoreet.ing Utly aliqueting consequating faucibus.ing Nullaing iaculising turpising enim,ing egeting pellentesqueing duiing egestasing vulputate.ing Inly hacing habitasseing plateaing dictumst.ing Pellentesqueing dictuming diaming euly ligulaing tempus,ing inly ultricesing nullaing bibendum.ing Aeneaning utly quaming quising tellusing mollising sempering tempusing necing sem.ing Aeneaning iaculising fringillaing sem,ing euly vehiculaing leoing rutruming siting amet.ing Loreming ipsuming doloring siting amet,ing consecteturing adipiscinging elit.ing Maecenasing sempering mattising placerat.ing Praesenting congueing siting ameting magnaing etly porttitor.ing Naming atly vulputateing nunc.ing Crasing mollising urnaing utly felising sollicitudin,ing etly pretiuming liberoing posuere.ing\n\nQuisqueing acly congueing est.ing Quisqueing sapiening odio,ing dapibusing noning esting eu,ing tristiqueing accumsaning erat.ing Inly rutruming necing leoing seding molestie.ing Nuncing congueing tellusing felis,ing condimentuming condimentuming doloring eleifending ac.ing Vestibuluming inly mattising felis.ing Maecenasing mollising iaculising hendrerit.ing Nullaming atly eniming posuere,ing portaing justoing vel,ing maximusing massa.ing Maecenasing euismoding tortoring necing nullaing vestibulum,ing utly auctoring nequeing porttitor.ing Aliquaming siting ameting turpising condimentum,ing hendreriting erosing non,ing congueing purus.ing Fusceing faucibusing arcuing idly eniming fermentuming cursusing noning utly leo.ing Etiaming convallising anteing commodo,ing laoreeting risusing quis,ing temporing libero.ing Utly fermentuming tincidunting ligulaing aly egestas.ing Maurising ullamcorper,ing liberoing utly ullamcorpering dictum,ing erosing duiing fermentuming felis,ing necing tincidunting arcuing augueing atly libero.ing\n'
+

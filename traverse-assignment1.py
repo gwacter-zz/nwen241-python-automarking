@@ -86,9 +86,56 @@ def write_marksheet(student_id, student_name, test_results):
         total = total + score
         fout.write("{0}: passed {1}/{4} cases, x {2} = {3}.\n".format(\
            each_test, mark, weight, score, num_tests[each_test]))
-    fout.write("FINAL MARK = {0}\n".format(total))
+    fout.write("CORRECTNESS MARK = {0}\n".format(total))
     fout.write("="*40+"\n")
-
+    fout.write("CODE STYLE:\n")
+    fout.write("Name conventions: X /5.\n")
+    fout.write("Commenting: Y /5.\n")
+    fout.write("Semi colons: Z /5.\n") 
+    fout.write("CODE STYLE MARK = X + Y + Z\n")
+    fout.write("="*40+"\n")    
+    fout.write("COMMENTS:\n")
+    fout.write("Good:\n")
+    fout.write("\n"*3)
+    fout.write("Bad:\n")
+    fout.write("\n"*3)
+    fout.write("="*40+"\n")    
+    fout.write("MARKING NOTES:")
+    fout.write("\n")
+    fout.write("CORRECTNESS: The marking for correctness is based upon\n"
+        "running the automated tests.\n"
+        "\n"
+        "We will double-check cases where there are a large number of \n"
+        "failures just in case there is a file encoding problem or similar \n"
+        "but other problems will result in lost marks.\n"
+        "\n"
+        "There are different numbers of tests for each function so we have \n"
+        "applied a weighting to the tests.\n"
+        "\n"
+        "CODE STYLE: The marking for the code style is based upon the \n"
+        "conventions we asked you to use when completing this assignment:\n"
+        "\n"
+        "Naming conventions Follow these formats: function_name,\n"
+        "function_parameter_name and local_var_name.\n"
+        "\n"
+        "- Use comments to document anything non-obvious.\n"
+        "\n"
+        "- Don't put commands on same line separated by semicolons.\n"
+        "\n"
+        "Generally a mark of 0 means you didn't follow the convention\n"
+        "anywhere in the assignment, mark of 1 means you did it at least\n"
+        "once, mark of 2 means you did it at least once in more than\n"
+        "one function, mark of 3 means that you did it at least once in\n"
+        "all functions, mark of 4 means that there was only one place\n"
+        "where you didn't do it and mark of 5 meant no errors anywhere\n"
+        "\n"
+        "COMMENTS: You should receive some short comments highlighting\n"
+        "something good and something bad about your solution. This might be\n"
+        "stylistic or advice on problems to correct for next time. Where you\n"
+        "have lost marks for say style we will tell you why.\n"
+        "\n"
+        "FINAL MARKS: We will calculate a final weighted mark that reflects\n"
+        "a 90:10 ratio between marks for correctness and marks for style.")
     fout.close()
 
     print("WRITING "+student_id+" "+student_name + " raw_output")
