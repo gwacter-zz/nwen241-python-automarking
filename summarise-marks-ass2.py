@@ -7,8 +7,14 @@ def extract_marks(studentdir):
     print(studentdir, ",", end="")
     
     # open the markshee in the directory
-    mfile = open("marksheet")
-    minfo = mfile.read()
+    try:
+        mfile = open("marksheet")
+        minfo = mfile.read()
+        mfile.close()
+    except IOError:
+        print("I/O error")
+        return
+
     # extract STUDENT ID:
     # extract CORRECTNESS MARK
     # extract COE STYLE MARK =
